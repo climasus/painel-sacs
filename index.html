@@ -13,17 +13,14 @@
   :root[data-theme="dark"] { --fundo:#111827; --texto:#e5e7eb; --cinza:#9ca3af; --borda:#374151; --azul:#67c1d0; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--fundo); color:var(--texto); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.55; }
-  main { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  main { max-width: 900px; margin: 0 auto; padding: 0 16px; }
   header { padding: 48px 0 24px; border-bottom: 1px solid var(--borda); }
   h1 { font-size: 2rem; margin: 0 0 8px; color: var(--azul); }
   h2 { font-size: 1.35rem; margin: 40px 0 12px; color: var(--azul); }
-  p { margin: 0 0 12px; color: var(--texto); }
+  p { margin: 0 0 12px; }
   .sub { color: var(--cinza); font-size: 1.05rem; }
-  .aviso { border-left: 4px solid var(--verde); padding: 10px 14px; background: rgba(47,133,90,.08); color: var(--texto); border-radius: 6px; margin: 20px 0; }
-  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  figure { margin: 0; border: 1px solid var(--borda); border-radius: 10px; overflow: hidden; background: #fff; }
-  figure img { display:block; width:100%; height:auto; }
-  figcaption { padding: 10px 12px; font-size: .95rem; color: var(--cinza); }
+  .aviso { border-left: 4px solid var(--verde); padding: 10px 14px; background: rgba(47,133,90,.08); border-radius: 6px; margin: 20px 0; }
+  .botao { display:inline-block; margin: 8px 0 16px; padding: 12px 20px; background: var(--azul); color:#fff; border-radius: 8px; text-decoration:none; font-weight:600; }
   pre { background: rgba(0,0,0,.05); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: .92rem; }
   code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
   footer { margin: 48px 0 32px; color: var(--cinza); font-size: .9rem; border-top: 1px solid var(--borda); padding-top: 16px; }
@@ -37,22 +34,16 @@
   <p class="sub">Alerta de calor e saúde na Amazônia Legal: previsão de ondas de calor, perfil dos municípios e a relação entre calor e saúde.</p>
 </header>
 
-<div class="aviso">Ferramenta em desenvolvimento. Ainda não validada para decisões operacionais. As capturas abaixo mostram o painel público.</div>
+<div class="aviso">Ferramenta em desenvolvimento. Ainda não validada para decisões operacionais.</div>
 
-<h2>O painel</h2>
-<div class="grade">
-  <figure><img src="img/previsao.png" alt="Aba Previsão, com mapa de níveis de alerta por município"><figcaption>Aba Previsão: nível de alerta por município.</figcaption></figure>
-  <figure><img src="img/ondas.png" alt="Aba Ondas de calor"><figcaption>Aba Ondas de calor.</figcaption></figure>
-  <figure><img src="img/perfil.png" alt="Aba Perfil do município"><figcaption>Aba Perfil do município.</figcaption></figure>
-  <figure><img src="img/saude.png" alt="Aba Calor e saúde"><figcaption>Aba Calor e saúde.</figcaption></figure>
-  <figure><img src="img/sobre.png" alt="Aba Sobre"><figcaption>Aba Sobre.</figcaption></figure>
-</div>
+<h2>Abrir o painel</h2>
+<p>O painel roda no computador do desenvolvedor. O botão abre a versão pública nesse computador:</p>
+<p><a class="botao" href="http://127.0.0.1:8001">Abrir o painel (http://127.0.0.1:8001)</a></p>
+<p>Esse endereço só funciona no computador onde o painel está rodando. Em outros computadores, o painel ainda não tem endereço público fixo.</p>
 
-<h2>Como ver o painel ao vivo</h2>
-<p>O painel roda no computador de desenvolvimento e ainda não tem endereço público fixo. Para abrir localmente, a partir do repositório do projeto:</p>
+<h2>Como rodar localmente</h2>
+<p>A partir do repositório do projeto:</p>
 <pre><code>SACS_MODO=publico PAINEL_DADOS=dados_publico uv run shiny run app.py --port 8001</code></pre>
-<p>Depois, acesse <code>http://127.0.0.1:8001</code>.</p>
-
 
 <footer>
   © 2026 ClimaSUS · Projeto SACS-Amazônia
