@@ -13,17 +13,15 @@
   :root[data-theme="dark"] { --fundo:#111827; --texto:#e5e7eb; --cinza:#9ca3af; --borda:#374151; --azul:#67c1d0; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--fundo); color:var(--texto); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.55; }
-  main { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-  header { padding: 48px 0 24px; border-bottom: 1px solid var(--borda); }
-  h1 { font-size: 2rem; margin: 0 0 8px; color: var(--azul); }
-  h2 { font-size: 1.35rem; margin: 40px 0 12px; color: var(--azul); }
+  main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 32px 0 16px; border-bottom: 1px solid var(--borda); }
+  h1 { font-size: 1.8rem; margin: 0 0 6px; color: var(--azul); }
   p { margin: 0 0 12px; }
-  .sub { color: var(--cinza); font-size: 1.05rem; }
-  .aviso { border-left: 4px solid var(--verde); padding: 10px 14px; background: rgba(47,133,90,.08); border-radius: 6px; margin: 20px 0; }
-  .botao { display:inline-block; margin: 8px 0 16px; padding: 12px 20px; background: var(--azul); color:#fff; border-radius: 8px; text-decoration:none; font-weight:600; }
-  pre { background: rgba(0,0,0,.05); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: .92rem; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-  footer { margin: 48px 0 32px; color: var(--cinza); font-size: .9rem; border-top: 1px solid var(--borda); padding-top: 16px; }
+  .sub { color: var(--cinza); }
+  .aviso { border-left: 4px solid var(--verde); padding: 10px 14px; background: rgba(47,133,90,.08); border-radius: 6px; margin: 16px 0; }
+  iframe { display:block; width:100%; height: 82vh; min-height: 640px; border: 1px solid var(--borda); border-radius: 10px; background:#fff; }
+  .rodape-painel { margin: 8px 0 0; font-size: .92rem; }
+  footer { margin: 32px 0; color: var(--cinza); font-size: .9rem; border-top: 1px solid var(--borda); padding-top: 14px; }
   a { color: var(--azul); }
 </style>
 </head>
@@ -31,19 +29,13 @@
 <main>
 <header>
   <h1>SACS-Amazônia</h1>
-  <p class="sub">Alerta de calor e saúde na Amazônia Legal: previsão de ondas de calor, perfil dos municípios e a relação entre calor e saúde.</p>
+  <p class="sub">Alerta de calor e saúde na Amazônia Legal</p>
 </header>
 
 <div class="aviso">Ferramenta em desenvolvimento. Ainda não validada para decisões operacionais.</div>
 
-<h2>Abrir o painel</h2>
-<p>O painel roda no computador do desenvolvedor. O botão abre a versão pública nesse computador:</p>
-<p><a class="botao" href="http://127.0.0.1:8001">Abrir o painel (http://127.0.0.1:8001)</a></p>
-<p>Esse endereço só funciona no computador onde o painel está rodando. Em outros computadores, o painel ainda não tem endereço público fixo.</p>
-
-<h2>Como rodar localmente</h2>
-<p>A partir do repositório do projeto:</p>
-<pre><code>SACS_MODO=publico PAINEL_DADOS=dados_publico uv run shiny run app.py --port 8001</code></pre>
+<iframe src="https://toddler-circular-protective-bits.trycloudflare.com/" title="Painel SACS-Amazônia" loading="lazy"></iframe>
+<p class="rodape-painel">Se o painel não aparecer, <a href="https://toddler-circular-protective-bits.trycloudflare.com/" target="_blank" rel="noopener">abra em uma nova aba</a>. O painel roda em um computador de desenvolvimento e fica disponível enquanto esse computador estiver ligado.</p>
 
 <footer>
   © 2026 ClimaSUS · Projeto SACS-Amazônia
